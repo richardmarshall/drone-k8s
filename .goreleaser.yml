@@ -1,0 +1,20 @@
+builds:
+- binary: drone-k8s
+  goos:
+  - linux
+  goarch:
+  - amd64
+  env:
+  - CGO_ENABLED=0
+
+checksum:
+  name_template: "CHECKSUM"
+
+git:
+  short_hash: true
+
+dockers:
+- image: richardmarshall/drone-k8s
+  tag_templates:
+  - "{{ .Version }}"
+  - latest

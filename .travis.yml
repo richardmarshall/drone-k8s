@@ -1,0 +1,11 @@
+language: go
+
+services:
+- docker
+
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: bash deploy.sh
+  on:
+    tags: true
